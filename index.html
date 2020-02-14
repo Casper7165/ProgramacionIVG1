@@ -1,37 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="Estilos.css">
-    <title>Bienvenido a programacion IV</title>
+    <title>App alumnos offline</title>
 </head>
 <body>
-    <div class="center">
-        <h1>Hola Mundo!</h1>
-        <p>Bienvenidos a programacion IV</p>
-        <form method="post">
-            <input pattern="[a-zA-ZñÑ]{3,65}" required type="text" placeholder="Nombre">
-            <br><br>
-            <textarea pattern="[\w]{10,150}" required cols="30" rows="3">
-                Dirección...
-            </textarea> <br>
-            <input required type="date" >
-            <input type="color" >
-            <input type="button" value="Registrar">
-            <input type="radio" name="cbo" id="suma">
-            <input type="radio" name="cbo" id="Resta">
-            <input type="radio" name="cbo" id="Multi">
-            <input type="radio" name="cbo" id="Division">
-            <br>
-            <input type="checkbox" id="php"> <label for="php">PHP</label for="">
-            <input type="checkbox" id="js"> <label for="js">JS</label>
-            <input type="checkbox" id="json"> <label for="json">JSON</label>
-            <input type="checkbox" id="nodejs"> <label for="nodejs">NodeJS</label>
-            <br>
-            <input type="submit" value="Guardar">
-         </form>
-    </div>
+        
+        <form class="formulario" method="post" id="frmAlumno">
+            <p>App alumnos offline</p>
+            <di class="container">
+                <di class="fila">
+                    <input pattern="^[A-Za-z]{4}[0-9]{6}" required type="text" placeholder="Codigo" id="txtCodigoAlumno">
+                </di>
+                <di class="fila">
+                    <input pattern="[A-Za-zñÑ]{3,65}" title="El nombre de usuario solo debe contener letras minúsculas. p.ej. John" required type="text" placeholder="Nombre" id="txtNombreAlumno">
+                </di>
+                <di class="fila">
+                    <input required type="text" placeholder="Direccion" id="txtDireccionAlumno">
+                </di>
+                <di class="fila">
+                    <input pattern="^\s*(?:\+?(\d{1,3}))?([-. (]*(\d{3})[-. )]*)?((\d{3})[-. ]*(\d{2,4})(?:[-.x ]*(\d+))?)\s*$" required type="text" placeholder="Telefono" id="txtTelefonoAlumno">
+                </di>
+                <di class="fila-btn">
+                    <input type="submit" value="Guardar" id="txtGuardarAlumno">
+                    <input type="button" value="Recuperar" id="btnRecuperarAlumnos">
+                </di>
+            </di>
+        </form>
+        <script src="app.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 </body>
 </html>
